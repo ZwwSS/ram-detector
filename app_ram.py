@@ -3,14 +3,18 @@ Detector de Genes de Resistencia Antimicrobiana (RAM)
 Aplicación web con Streamlit - MVP
 """
 
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
 from Bio import pairwise2
+from Bio.pairwise2 import format_alignment
+import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # Necesario para Streamlit Cloud
+import matplotlib.pyplot as plt
+from pathlib import Path
 import time
 import random
-from pathlib import Path
 import io
+
+print("✓ Módulos importados correctamente")
 
 # Configuración de la página
 st.set_page_config(
@@ -422,4 +426,5 @@ with tab3:
 
 # Footer
 st.markdown("---")
+
 st.caption("🧬 Detector RAM MVP v1.0 | Desarrollado con Streamlit + Biopython")
